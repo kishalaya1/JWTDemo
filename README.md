@@ -37,4 +37,4 @@ TOKEN=$(curl -s -X POST http://localhost:5157/login \
 curl -s http://localhost:5157/secure --oauth2-bearer "$TOKEN"
 ```
 
-Optionally set a stable signing key (instead of the generated in-memory key) by setting environment variable `Jwt__Key` before running the app.
+`Jwt__Key` is required before running the app (for example, set it as shown in the run command above).

@@ -13,6 +13,6 @@ Content-Type: application/json
 
 GET {{JWTDemo_HostAddress}}/secure
 Accept: application/json
-Authorization: ******
+Authorization: Bearer {{token}}
 
 ###
