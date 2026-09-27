@@ -1,0 +1,15 @@
+@model IEnumerable<PurchaseHistoryViewModel>
+@{
+    ViewData["Title"] = "Purchase History";
+}
+<h1>Purchase History</h1>
+<p class="text-muted">Visible to Admin, Manager, and Super User users.</p>
+<table class="table table-striped table-bordered">
+    <thead><tr><th>Employee</th><th>Item</th><th>Amount</th><th>Purchase date</th></tr></thead>
+    <tbody>
+    @foreach (var purchase in Model)
+    {
+        <tr><td>@purchase.EmployeeName</td><td>@purchase.Item</td><td>@purchase.Amount.ToString("C")</td><td>@purchase.PurchaseDate</td></tr>
+    }
+    </tbody>
+</table>

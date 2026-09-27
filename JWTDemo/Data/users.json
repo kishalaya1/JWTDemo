@@ -1,0 +1,10 @@
+[
+  { "Username": "admin.one", "Password": "Admin123!", "DisplayName": "Alex Admin", "Role": "Admin" },
+  { "Username": "admin.two", "Password": "Admin456!", "DisplayName": "Avery Admin", "Role": "Admin" },
+  { "Username": "manager.one", "Password": "Manager123!", "DisplayName": "Morgan Manager", "Role": "Manager" },
+  { "Username": "manager.two", "Password": "Manager456!", "DisplayName": "Mia Manager", "Role": "Manager" },
+  { "Username": "superuser.one", "Password": "Super123!", "DisplayName": "Sam Super User", "Role": "Super User" },
+  { "Username": "superuser.two", "Password": "Super456!", "DisplayName": "Skyler Super User", "Role": "Super User" },
+  { "Username": "minor.one", "Password": "Minor123!", "DisplayName": "Taylor Minor User", "Role": "Minor User" },
+  { "Username": "minor.two", "Password": "Minor456!", "DisplayName": "Jordan Minor User", "Role": "Minor User" }
+]
