@@ -1,0 +1,16 @@
+@JWTDemo_HostAddress = http://localhost:5157
+
+POST {{JWTDemo_HostAddress}}/login
+Content-Type: application/json
+
+{
+  "username": "demo",
+  "password": "password123"
+}
+
+###
+
+GET {{JWTDemo_HostAddress}}/secure
+Accept: application/json
+
+###
