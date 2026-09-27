@@ -1,0 +1,9 @@
+﻿@{
+    ViewData["Title"] = "Landing Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">JWT Demo Landing Page</h1>
+    <p>Welcome, @User.Identity?.Name. Use the navigation links to view the data available to your role.</p>
+    <p class="text-muted">Your role: @User.FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value</p>
+</div>

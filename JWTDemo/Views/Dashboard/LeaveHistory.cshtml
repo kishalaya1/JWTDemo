@@ -1,0 +1,15 @@
+@model IEnumerable<LeaveHistoryViewModel>
+@{
+    ViewData["Title"] = "Employee Leave History";
+}
+<h1>Employee Leave History</h1>
+<p class="text-muted">Visible to Admin and Manager users.</p>
+<table class="table table-striped table-bordered">
+    <thead><tr><th>Employee</th><th>Leave type</th><th>From date</th><th>To date</th></tr></thead>
+    <tbody>
+    @foreach (var leave in Model)
+    {
+        <tr><td>@leave.EmployeeName</td><td>@leave.LeaveType</td><td>@leave.FromDate</td><td>@leave.ToDate</td></tr>
+    }
+    </tbody>
+</table>
