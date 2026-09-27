@@ -1,4 +1,4 @@
-@JWTDemo_HostAddress = http://localhost:5157
+@JWTDemo_HostAddress = https://localhost:7265
 @token = <paste-token-from-login-response>
 
 POST {{JWTDemo_HostAddress}}/login

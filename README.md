@@ -25,7 +25,7 @@ dotnet run
 1. Get token:
 
 ```bash
-TOKEN=$(curl -s -X POST http://localhost:5157/login \
+TOKEN=$(curl -k -s -X POST https://localhost:7265/login \
   -H "Content-Type: application/json" \
   -d '{"username":"demo","password":"password123"}' | \
   python -c 'import sys,json; print(json.load(sys.stdin)["accessToken"])')
@@ -34,7 +34,7 @@ TOKEN=$(curl -s -X POST http://localhost:5157/login \
 2. Call protected endpoint:
 
 ```bash
-curl -s http://localhost:5157/secure --oauth2-bearer "$TOKEN"
+curl -k -s https://localhost:7265/secure --oauth2-bearer "$TOKEN"
 ```
 
 `Jwt__Key` is required before running the app (for example, set it as shown in the run command above).
