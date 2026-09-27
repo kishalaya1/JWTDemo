@@ -16,6 +16,7 @@ This project demonstrates JWT authentication using ASP.NET Core minimal APIs.
 
 ```bash
 dotnet restore
+export Jwt__Key="replace-with-a-long-random-demo-key"
 dotnet run
 ```
 

@@ -1,6 +1,5 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using System.Security.Cryptography;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -9,11 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 var jwtSection = builder.Configuration.GetSection("Jwt");
 var issuer = jwtSection["Issuer"] ?? throw new InvalidOperationException("JWT Issuer is not configured.");
 var audience = jwtSection["Audience"] ?? throw new InvalidOperationException("JWT Audience is not configured.");
-var configuredKey = jwtSection["Key"];
-var keyBytes = string.IsNullOrWhiteSpace(configuredKey)
-    ? RandomNumberGenerator.GetBytes(64)
-    : Encoding.UTF8.GetBytes(configuredKey);
-var signingKey = new SymmetricSecurityKey(keyBytes);
+var key = jwtSection["Key"] ?? throw new InvalidOperationException("JWT Key is not configured. Set Jwt:Key (for example via environment variable Jwt__Key).");
+var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
