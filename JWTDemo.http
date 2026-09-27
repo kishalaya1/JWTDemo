@@ -1,4 +1,5 @@
 @JWTDemo_HostAddress = http://localhost:5157
+@token = <paste-token-from-login-response>
 
 POST {{JWTDemo_HostAddress}}/login
 Content-Type: application/json
@@ -12,5 +13,6 @@ Content-Type: application/json
 
 GET {{JWTDemo_HostAddress}}/secure
 Accept: application/json
+Authorization: ******
 
 ###

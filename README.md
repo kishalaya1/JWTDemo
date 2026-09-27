@@ -24,16 +24,16 @@ dotnet run
 1. Get token:
 
 ```bash
-curl -s -X POST http://localhost:5000/login \
+TOKEN=$(curl -s -X POST http://localhost:5157/login \
   -H "Content-Type: application/json" \
-  -d '{"username":"demo","password":"password123"}'
+  -d '{"username":"demo","password":"password123"}' | \
+  python -c 'import sys,json; print(json.load(sys.stdin)["accessToken"])')
 ```
 
 2. Call protected endpoint:
 
 ```bash
-curl -s http://localhost:5000/secure \
-  -H "Authorization: ******"
+curl -s http://localhost:5157/secure --oauth2-bearer "$TOKEN"
 ```
 
-Use the `accessToken` returned from `/login` as the bearer token value.
+Optionally set a stable signing key (instead of the generated in-memory key) by setting environment variable `Jwt__Key` before running the app.
